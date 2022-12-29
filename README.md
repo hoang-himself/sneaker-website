@@ -28,7 +28,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/GiangHoGoVap/sneaker-website">
-    <img src="assets/img/logo.jpeg" alt="Logo" width="80" height="80">
+    <img src="assets/img/logo.jpeg" alt="Logo" width="120" height="120">
   </a>
 
 <h3 align="center">Sneaker Fest</h3>
