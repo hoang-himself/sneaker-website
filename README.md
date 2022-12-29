@@ -23,13 +23,11 @@
 [![Forks][forks-shield]][forks-url]
 [![Stargazers][stars-shield]][stars-url]
 [![Issues][issues-shield]][issues-url]
-[![MIT License][license-shield]][license-url]
-[![LinkedIn][linkedin-shield]][linkedin-url]
 
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/github_username/repo_name">
+  <a href="https://github.com/GiangHoGoVap/sneaker-website">
     <img src="assets/img/logo.jpeg" alt="Logo" width="80" height="80">
   </a>
 
@@ -38,14 +36,11 @@
   <p align="center">
     This is a full project for Web Programming (Lab) (CO3050)
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
-    <br />
-    <br />
-    <a href="https://github.com/github_username/repo_name">View Demo</a>
+    <a href="#about-the-project">View Demo</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Report Bug</a>
+    <a href="https://github.com/GiangHoGoVap/sneaker-website/issues">Report Bug</a>
     ·
-    <a href="https://github.com/github_username/repo_name/issues">Request Feature</a>
+    <a href="https://github.com/GiangHoGoVap/sneaker-website/pulls">Request Feature</a>
   </p>
 </div>
 
@@ -134,19 +129,14 @@ Project Link: [https://github.com/GiangHoGoVap/chatbot-widget-213](https://githu
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
 
-[contributors-shield]: https://img.shields.io/github/contributors/github_username/repo_name.svg?style=for-the-badge
-[contributors-url]: https://github.com/github_username/repo_name/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/github_username/repo_name.svg?style=for-the-badge
-[forks-url]: https://github.com/github_username/repo_name/network/members
-[stars-shield]: https://img.shields.io/github/stars/github_username/repo_name.svg?style=for-the-badge
-[stars-url]: https://github.com/github_username/repo_name/stargazers
-[issues-shield]: https://img.shields.io/github/issues/github_username/repo_name.svg?style=for-the-badge
-[issues-url]: https://github.com/github_username/repo_name/issues
-[license-shield]: https://img.shields.io/github/license/github_username/repo_name.svg?style=for-the-badge
-[license-url]: https://github.com/github_username/repo_name/blob/master/LICENSE.txt
-[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=for-the-badge&logo=linkedin&colorB=555
-[linkedin-url]: https://linkedin.com/in/linkedin_username
-[product-screenshot]: images/screenshot.png
+[contributors-shield]: https://img.shields.io/github/contributors/GiangHoGoVap/sneaker-website.svg?style=for-the-badge
+[contributors-url]: https://github.com/GiangHoGoVap/sneaker-website/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/GiangHoGoVap/sneaker-website.svg?style=for-the-badge
+[forks-url]: https://github.com/GiangHoGoVap/sneaker-website/network/members
+[stars-shield]: https://img.shields.io/github/stars/GiangHoGoVap/sneaker-website.svg?style=for-the-badge
+[stars-url]: https://github.com/GiangHoGoVap/sneaker-website/stargazers
+[issues-shield]: https://img.shields.io/github/issues/GiangHoGoVap/sneaker-website.svg?style=for-the-badge
+[issues-url]: https://github.com/GiangHoGoVap/sneaker-website/issues
 [php.net]: https://img.shields.io/badge/php-B0B3D6?style=for-the-badge&logo=php&logoColor=787CB5
 [php-url]: https://www.php.net/
 [mysql.com]: https://img.shields.io/badge/mysql-ADD8E6?style=for-the-badge&logo=mysql&logoColor=00758F
