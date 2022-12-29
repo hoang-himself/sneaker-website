@@ -83,8 +83,6 @@
 -   [![Bootstrap][bootstrap.com]][bootstrap-url]
 -   [![JQuery][jquery.com]][jquery-url]
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 <!-- GETTING STARTED -->
 
 ## Getting Started
@@ -122,7 +120,7 @@ Don't forget to give the project a star! Thanks again!
 
 Tam Nguyen - <a href="mailto:minhtam27022001@gmail.com?" target="blank"><img align="center" src="https://www.vectorlogo.zone/logos/gmail/gmail-icon.svg" alt="gianghogovap" height="30" width="40"/></a>
 
-Project Link: [https://github.com/GiangHoGoVap/chatbot-widget-213](https://github.com/GiangHoGoVap/chatbot-widget-213)
+Project Link: [https://github.com/GiangHoGoVap/sneaker-website](https://github.com/GiangHoGoVap/sneaker-website)
 
 <p align="right">(<a href="#top">back to top</a>)</p>
 
