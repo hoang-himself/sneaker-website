@@ -1,0 +1,51 @@
+@import url("https://fonts.googleapis.com/css2?family=Sacramento&family=Silkscreen&display=swap");
+
+.company-name {
+    font-family: "Sacramento";
+    font-size: 48px !important;
+    font-weight: 200 !important;
+}
+
+.shoe-name {
+    font-family: "Silkscreen";
+}
+
+.accordion-button:not(.collapsed) {
+    color: black !important;
+    background-color: white !important;
+}
+
+.accordion-button:link,
+.accordion-button:visited,
+.accordion-button:hover,
+.accordion-button:active {
+    background-color: white !important;
+    color: black !important;
+    text-decoration: none !important;
+    border: hidden !important;
+    border-color: white !important;
+    box-shadow: 0px !important;
+}
+
+.accordion-button:focus {
+    z-index: 3;
+    border-color: #fff !important;
+    outline: 0;
+    box-shadow: 0 0 0 0.25rem #fff !important;
+}
+
+input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+}
+
+/* Carousel Hero */
+#my-hero-carousel .carousel-indicators li {
+    margin-top: -50px;
+    background-color: black;
+}
+#my-hero-carousel .carousel-control-next i,
+#my-hero-carousel .carousel-control-prev i {
+    color: black !important;
+    font-size: 2.8em !important;
+}
