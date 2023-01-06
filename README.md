@@ -70,7 +70,9 @@
 
 ## About The Project
 
-<img src="assets/img/project_overview.gif" alt="Project overview">
+<div align="center">
+  <img src="assets/img/project_overview.gif" alt="Project overview">
+</div>
 
 ### Built With
 
