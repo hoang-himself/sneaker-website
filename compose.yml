@@ -1,0 +1,22 @@
+services:
+  web:
+    build: .
+    depends_on:
+      - db
+    network_mode: service:db
+
+  db:
+    image: docker.io/library/postgres:15
+    environment:
+      - POSTGRES_PASSWORD=root
+      - POSTGRES_USER=root
+      - POSTGRES_DB=sneaker_fest
+      - PGDATA=/var/lib/postgresql/data/pgdata
+      - PGPORT=5432
+    volumes:
+      - db:/var/lib/postgresql/data
+    ports:
+      - 80:80
+
+volumes:
+  db:
