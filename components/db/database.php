@@ -8,22 +8,28 @@
     $password = "root";
 
     // Create connection
-    $conn = new mysqli($servername, $username, $password);
+    $connStr = "host=localhost port=5432 dbname=sneaker_fest user=root password=root";
+    $conn = pg_connect($connStr);
 
     // Check connection
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    $stat = pg_connection_status($conn);
+    if ($stat === PGSQL_CONNECTION_OK) {
+        echo 'Connection status ok';
+    } else {
+        echo 'Connection status bad';
     }
 
     // Create database
     $sql = "CREATE DATABASE if not exists sneaker_fest";
-    if (!$conn->query($sql)) {
-        echo "Error creating database: " . $conn->error;
+    if (!pg_query($conn, $sql)) {
+        echo "Cannot create database.\n";
+        exit;
     }
 
     $sql = "USE sneaker_fest";
-    if (!$conn->query($sql)) {
-        echo "Error connection: " . $conn->error;
+    if (!pg_query($conn, $sql)) {
+        echo "Cannot use database.\n";
+        exit;
     }
 
     // Create table: users
@@ -34,8 +40,9 @@
                 pwd VARCHAR(50) NOT NULL,
                 user_level INT(5) DEFAULT 0
             )";
-    if (!$conn->query($sql)) {
-        echo "Error creating table: " . $conn->error;
+    if (!pg_query($conn, $sql)) {
+        echo "Cannot create 'users' table.\n";
+        exit;
     }
 
     // Create table: products
@@ -50,8 +57,9 @@
             product_description TEXT NOT NULL,
             product_price INT NOT NULL
         )";
-    if (!$conn->query($sql)) {
-        echo "Error creating table: " . $conn->error;
+    if (!pg_query($conn, $sql)) {
+        echo "Cannot create 'products' table.\n";
+        exit;
     }
     ?>
 </body>
