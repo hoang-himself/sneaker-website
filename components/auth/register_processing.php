@@ -15,23 +15,13 @@
             $pwd = $_POST['inputPassword'];
             $confirmed_pwd = $_POST['inputConfirmedPassword'];
 
-            // $sql = $conn->prepare("SELECT * FROM users WHERE email = ?");
-            // $sql->bind_param("s", $userEmail);
-            // $sql->execute();
-            // $result = $sql->get_result();
-            // $row = $result->fetch_array(MYSQLI_NUM);
-
             $result = pg_query_params($conn, 'SELECT * FROM users WHERE email = $1', array($userEmail));
-            $row = pg_fetch_array($result, 0, PGSQL_NUM);
+            $row = pg_fetch_array($result, null, PGSQL_NUM);
 
             if ($row > 0) {
                 echo "<script>window.location.href='../../index.php?page=register';alert('This email address has been registered before.');</script>";
             } else {
                 if ($pwd === $confirmed_pwd) {
-                    // $result = $conn->prepare("INSERT INTO users (username, email, pwd) VALUES (?, ?, ?)");
-                    // $result->bind_param("sss", $username, $userEmail, $pwd);
-                    // $result->execute();
-
                     $result = pg_query_params($conn, 'INSERT INTO users (username, email, pwd) VALUES ($1, $2, $3)', array($username, $userEmail, $pwd));
                     if (pg_affected_rows($result) > 0) {
                         echo "<script>window.location.href='../../index.php?page=home';alert('You have registered successfully!');</script>";

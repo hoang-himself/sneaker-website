@@ -16,8 +16,8 @@
                         <?php
                         include_once("components/db/database.php");
                         $sql = "SELECT * FROM products WHERE product_type = 1 AND product_price = (SELECT MAX(product_price) FROM products WHERE product_type = 1)";
-                        $result = $conn->query($sql);
-                        $row1 = $result->fetch_assoc();
+                        $result = pg_query($conn, $sql);
+                        $row1 = pg_fetch_assoc($result)
                         ?>
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
                             <img class="img-fluid p-5" src="<?php echo $row1['product_image1']; ?>" alt="" />
@@ -40,8 +40,8 @@
                     <div class="row p-5">
                         <?php
                         $sql = "SELECT * FROM products WHERE product_type = 2 AND product_price = (SELECT MAX(product_price) FROM products WHERE product_type = 2)";
-                        $result = $conn->query($sql);
-                        $row2 = $result->fetch_assoc();
+                        $result = pg_query($conn, $sql);
+                        $row2 = pg_fetch_assoc($result)
                         ?>
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
                             <img class="img-fluid p-5" src="<?php echo $row2["product_image1"]; ?>" alt="" />
@@ -66,8 +66,8 @@
                     <div class="row p-5">
                         <?php
                         $sql = "SELECT * FROM products WHERE product_type = 3 AND product_price = (SELECT MAX(product_price) FROM products WHERE product_type = 3)";
-                        $result = $conn->query($sql);
-                        $row3 = $result->fetch_assoc();
+                        $result = pg_query($conn, $sql);
+                        $row3 = pg_fetch_assoc($result)
                         ?>
                         <div class="mx-auto col-md-8 col-lg-6 order-lg-last">
                             <img class="img-fluid p-5" src="<?php echo $row3["product_image1"]; ?>" alt="" />

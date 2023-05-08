@@ -27,10 +27,8 @@
     <?php
     include_once "components/db/database.php";
     $productID = $_GET['id'];
-    $sql = $conn->prepare("SELECT * FROM products WHERE id = ?");
-    $sql->bind_param("i", $productID);
-    $sql->execute();
-    $result = $sql->get_result();
+    $sql = pg_prepare($conn, "", "SELECT * FROM products WHERE id = ?");
+    $result = pg_execute($conn, "", array($productID));
     $row = $result->fetch_array();
     ?>
     <!-- Open Content -->

@@ -20,9 +20,8 @@
         $productDesc = $_POST['inputProductDesc'];
         $productPrice = $_POST['inputProductPrice'];
 
-        $sql = $conn->prepare("INSERT INTO products (product_name, product_image1, product_image2, product_type, product_origin, product_gender, product_description, product_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
-        $sql->bind_param("sssisisi", $productName, $productImage_1, $productImage_2, $productType, $productOrigin, $productGender, $productDesc, $productPrice);
-        $sql->execute();
+        $sql = pg_prepare($conn, "", "INSERT INTO products (product_name, product_image1, product_image2, product_type, product_origin, product_gender, product_description, product_price) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+        pg_execute($conn, "", array($productName, $productImage_1, $productImage_2, $productType, $productOrigin, $productGender, $productDesc, $productPrice));
 
         header("Location: ../../../index.php?page=products&type=$type");
     }

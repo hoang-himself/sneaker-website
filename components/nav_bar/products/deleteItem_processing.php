@@ -14,9 +14,8 @@
         } else if ($pType == 3) {
             $type = 'basketball';
         }
-        $sql = $conn->prepare("DELETE FROM products WHERE id = ?");
-        $sql->bind_param("i", $productID);
-        $sql->execute();
+        $sql = pg_prepare($conn, "", "DELETE FROM products WHERE id = ?");
+        pg_execute($conn,"", array($productID));
         unset($_SESSION["productID"]);
         header("Location: ../../../index.php?page=products&type=$type");
     }

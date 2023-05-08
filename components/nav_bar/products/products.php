@@ -150,7 +150,7 @@
                     $sql;
                     if (isset($_POST['submitSearchItem'])) {
                         $searchItem = $_POST['searchItem'] . "%";
-                        $sql = $conn->prepare("SELECT * FROM products WHERE product_name LIKE ?");
+                        $sql = pg_prepare($conn, "", "SELECT * FROM products WHERE product_name LIKE ?");
                         $sql->bind_param("s", $searchItem);
                     } else {
                         $type = $_GET['type'];
@@ -169,33 +169,32 @@
                             } else {
                                 $productGender = 3;
                             }
-                            $sql = $conn->prepare("SELECT * FROM products WHERE product_type = ? AND product_gender = ?");
+                            $sql = pg_prepare($conn, "", "SELECT * FROM products WHERE product_type = ? AND product_gender = ?");
                             $sql->bind_param("ii", $productType, $productGender);
                         } else if (isset($_GET['sort'])) {
                             $sort = $_GET['sort'];
                             switch ($sort) {
                                 case 'newest': {
-                                        $sql = $conn->prepare("SELECT * FROM products WHERE product_type = ? ORDER BY id");
+                                        $sql = pg_prepare($conn, "", "SELECT * FROM products WHERE product_type = ? ORDER BY id");
                                         break;
                                     }
                                 case 'descend': {
-                                        $sql = $conn->prepare("SELECT * FROM products WHERE product_type = ? ORDER BY product_price DESC");
+                                        $sql = pg_prepare($conn, "", "SELECT * FROM products WHERE product_type = ? ORDER BY product_price DESC");
                                         break;
                                     }
                                 case 'ascend': {
-                                        $sql = $conn->prepare("SELECT * FROM products WHERE product_type = ? ORDER BY product_price ASC");
+                                        $sql = pg_prepare($conn, "", "SELECT * FROM products WHERE product_type = ? ORDER BY product_price ASC");
                                         break;
                                     }
                             }
                             $sql->bind_param("i", $productType);
                         } else {
-                            $sql = $conn->prepare("SELECT * FROM products WHERE product_type = ?");
+                            $sql = pg_prepare($conn, "", "SELECT * FROM products WHERE product_type = ?");
                             $sql->bind_param("i", $productType);
                         }
                     }
 
-                    $sql->execute();
-                    $result = $sql->get_result();
+                    $result = pg_execute($conn, "");
                     global $productName, $productPrice;
                     session_start();
                     while ($row = $result->fetch_assoc()) {

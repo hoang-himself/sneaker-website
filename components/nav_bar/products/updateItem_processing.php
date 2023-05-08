@@ -21,9 +21,8 @@
         $productGender2 = $_POST["inputProductGender2"];
         $productDesc2 = $_POST['inputProductDesc2'];
         $productPrice2 = $_POST['inputProductPrice2'];
-        $sql = $conn->prepare("UPDATE products SET product_name = ?, product_image1 = ?, product_image2 = ?, product_type = ? , product_origin = ?, product_gender = ?, product_description = ?, product_price = ? WHERE id = ?");
-        $sql->bind_param("sssisisii", $productName2, $productImage2_1, $productImage2_2, $productType2, $productOrigin2, $productGender2, $productDesc2, $productPrice2, $productID);
-        $sql->execute();
+        $sql = pg_prepare($conn, "", "UPDATE products SET product_name = ?, product_image1 = ?, product_image2 = ?, product_type = ? , product_origin = ?, product_gender = ?, product_description = ?, product_price = ? WHERE id = ?");
+        pg_execute($conn, "", array($productName2, $productImage2_1, $productImage2_2, $productType2, $productOrigin2, $productGender2, $productDesc2, $productPrice2, $productID));
         unset($_SESSION["productID"]);
         header("Location: ../../../index.php?page=products&type=$type");
     }
